@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>网络相册 -相册列表 </title>
+ 
+<meta name = "viewport" content = "width=device - width,initial-scale = 1.0">
+<link href = "/static/bootstrap/css/bootstrap.min.css" rel = "stylesheet" media ="screen">           
+<style >
+           
+h1 { background: #6E94A3; padding: 20px; color:#fefefe; }
+            
+h2 { background: #ddf; padding: 10px 20px; }
+            
+h3 { background: #D7E8F0; padding: 5px 20px; }
+            
+p { padding: 5px 20px; }
+            
+table { width: 100%; }
+            
+table th { text-align: left; }
+        
+</style>
+    
+</head>
+    
+<body>
+        
+<h1>网络相册</h1>
+<p><a href="{% url 'index' %}">&laquo; 返回首页</a></p>
+<h2>相册列表</h2>
+{% if object_list %}
+<table>
+    <tr>
+        <th>标题</th>
+        <th>缩略图</th>
+        <th>描述</th>
+    </tr>
+    {% for item in object_list %}
+    <tr>
+        <td><i>{{ item.name }}</i></td>
+        <td>
+            {% if item.photo_set.count %}
+            <a href="{{ item.get_absolute_url }}">
+                <img src="{{ item.photo_set.all.0.image.thumb_url }}" />
+            </a>
+            {% else %}
+            (No photos currently uploaded)
+            {% endif %}
+        </td>
+        <td>{{ item.description }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>There are currently no items to display.</p>
+{% endif %}
+
+</body>
+
+</html>
+
+

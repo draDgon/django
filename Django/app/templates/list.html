@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>hi</title>
+<meta name = "viewport" content = "width=device - width,initial-scale = 1.0">
+<link href = "/static/bootstrap/css/bootstrap.min.css" rel = "stylesheet" media ="screen">   
+</head>
+<style type="text/css">
+#con{ border:5px solid #ccc;padding:5px;width: 260px;height: 190px;}
+.a{ border:2px solid #ccc;background-color:#eee;}
+#zzz{top:0px ;left:0px ;margin: 0px ;padding:0px;}
+#LHeader{margin: 0px;padding-top: 2px; border-bottom:thin dashed #696969;}
+#LDay td{text-align: center;width: 30px; height: 30px;font-family: "宋体";font-size: 12px;}
+#li{list-style:none;padding-left: 0px}
+#li li{float: left;width: 50px;height: 20px;margin: 0px 2px;background: #ccc;text-align: center;line-height: 20px;cursor: pointer;}
+#cs {width: 400px;height: 175px;float: left;border-top: 1px dashed #696969 ;border-bottom:1px dashed #696969;margin:0px;padding-left: 10px}
+#cs li{margin: 10px 0px 0px 0px;width: 100px;}
+#cs li a{color: #696969;}
+#js {width: 400px;height: 175px;float: left;border-top: 1px dashed #696969 ;border-bottom:1px dashed #696969;margin:0px;padding-left: 10px}
+#js li{margin: 10px 0px 0px 0px;width: 120px;}
+#js li a{color: #696969;}
+#gs {width: 400px;height: 175px;float: left;border-top: 1px dashed #696969 ;border-bottom:1px dashed #696969;margin:0px;padding-left: 10px}
+#gs li{margin: 10px 0px 0px 0px;width: 100px;}
+#gs li a{color: #696969;}
+#lpl {position: absolute;top: 100px; left: 180px;list-style:none;}
+#dota {position: absolute;top: 18px; left: 180px;list-style:none;}
+</style>
+ 
+ 
+<body onload="rili()">
+<div class = "container"> 
+<div class="row" style="background-color:#FFFFF0" >
+<div class="col-md-1"  id = "zzz" onmouseover = "mouseoverz()" onmouseout = "mouseoutz()" style="filter:contrast(1);">
+<p style ="position: absolute;top:17px;left:0px;">默认头像</p>
+<img src="/static/img/yinhun.png" id= "mouseclick" onmouseover = "mouseover()" onmouseout = "mouseout()" style ="position: absolute;top:0px;left:0px;filter:opacity(1);"/></div>
+<script type="text/javascript">
+function mouseover(){
+document.getElementById("mouseclick").style.filter = "opacity(0.25)";
+}
+function mouseout(){
+document.getElementById("mouseclick").style.filter="opacity(1)";
+}
+function mouseoverz(){
+document.getElementById("zzz").style.filter = "contrast(0.5)";
+}
+function mouseoutz(){
+document.getElementById("zzz").style.filter="contrast(1)";
+}
+</script>
+<div  class="col-md-2" style="position:absolute;top:0px;left:150px;"><h5>用户名:{{username}}</h5><h6>个人签名：</h6></div>
+<div class= "col-md-6 col-md-offset-2" ><div class = "text-center"><h2>刘先生与王小姐的秘密花园</h2>
+</div></div> 
+<div class = "col-md-3"><a href="http://127.0.0.1:8000" class="btn btn-link" role="button"><h5><strong>退出登录</strong></h5></a>
+<a href="http://127.0.0.1:8000" class="btn btn-link" role="button"><h5><strong>注销账号</strong></h5></a>
+<a href="xx" class="btn btn-link" role="button"><h5><strong>个人信息</strong></h5></a></div></div>
+           
+         
+<div class = "row"  style="background-image:url(http://127.0.0.1:8000/static/img/hua.png);">
+<div class="col-md-2"><a class="btn btn-link" href="gy" role="button"><h5><strong>关于我们</strong></h5></a></div>
+<div class="col-md-2"><a class="btn btn-link" href="photo" role="button"><h5><strong>相册</strong></h5></a></div>
+<div class="col-md-2"><a class="btn btn-link"  href="day" role="button"><h5><strong>日志</strong></h5></a></div>
+<div class="col-md-2"><a class="btn btn-link"  href="blog" role="button"><h5><strong>博客</strong></h5></a></div>
+<div class="col-md-2"><a class="btn btn-link" href="dt" role="button"><h5><strong>动态</strong></h5></a></div>
+<div class="col-md-2"><a class="btn btn-link" href="gd" role="button"><h5><strong>更多</strong></h5></a></div></div>
+     
+
+<div class = "row" >
+<div class="col-md-2 " style="border:2px solid #C0C0C0" >
+<h5 style="padding-left:0px;"><strong>最近：</strong></h5>
+<a class="btn btn-link" href="blog/1" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>pygame基本框架</strong></h5></a>
+<a class="btn btn-link" href="blog/2" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>网络爬虫的艺术</strong></h5></a>
+<a class="btn btn-link" href="blog/3" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>selenium自动化测试</strong></h5></a>
+<a class="btn btn-link" href="blog/4" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>美化网站</strong></h5></a><br>
+<a class="btn btn-link" href="blog/5" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>注册域名</strong></h5></a><br>
+<a class="btn btn-link" href="blog/6" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>Django的美妙</strong></h5></a>
+<a class="btn btn-link" href="blog/7" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>如何制作简单的个人网站</strong></h5></a></div>
+
+<div id = "uzi" >
+<img src="/static/img/guanggao.jpg" width="77" height="181" style="position:fixed;right:5px;top:129px;z-index:1;"/></div>
+<div id = "zza" >
+<img src="/static/img/beijin.png" style="position:fixed;left:0px;top:0px;bottom:0px;z-index:1;"/>
+<a href="http://127.0.0.1:8000/list/blog/"><img src = "/static/img/hao.png" id= "mouse1" onmouseover = "mouse11()" onmouseout = "mouse12()" style="position:fixed;left:0px;top:50px;z-index:3;"/></a>
+<a href="http://127.0.0.1:8000/list/photo/"><img src = "/static/img/meng.png" id= "mouse2" onmouseover = "mouse21()" onmouseout = "mouse22()" style="position:fixed;left:0px;top:150px;z-index:4;"/></a>
+<a href="http://127.0.0.1:8000/list/day/"><img src = "/static/img/lol.png" id= "mouse3"  onmouseover = "mouse31()" onmouseout = "mouse32()" style="position:fixed;left:0px;top:250px;z-index:5;"/></a>
+<a href="http://127.0.0.1:8000/list/dt/"><img src = "/static/img/dong.png" id= "mouse4" onmouseover = "mouse41()" onmouseout = "mouse42()" style="position:fixed;left:0px;top:350px;z-index:6;"/></a>
+<a href="http://127.0.0.1:8000/list/gd/"><img src ="/static/img/jing.png" id= "mouse5" onmouseover = "mouse51()" onmouseout = "mouse52()" style="position:fixed;left:0px;top:450px;z-index:7;"/></a>
+<script type="text/javascript">
+function mouse11(){document.getElementById('mouse1').src = "/static/img/chi.png"}
+function mouse12(){document.getElementById('mouse1').src ="/static/img/hao.png"}
+function mouse21(){document.getElementById('mouse2').src = "/static/img/wan.png"}
+function mouse22(){document.getElementById('mouse2').src ="/static/img/meng.png"}
+function mouse31(){document.getElementById('mouse3').src = "/static/img/yan.png"}
+function mouse32(){document.getElementById('mouse3').src ="/static/img/lol.png"}
+function mouse41(){document.getElementById('mouse4').src = "/static/img/ma.png"}
+function mouse42(){document.getElementById('mouse4').src ="/static/img/dong.png"}
+function mouse51(){document.getElementById('mouse5').src = "/static/img/lv.png"}
+function mouse52(){document.getElementById('mouse5').src ="/static/img/jing.png"}
+</script>
+</div>
+
+<div class = "col-md-8" >
+<div class="row">
+<div class = "col-md-5">
+<div id="con">
+    <div class="a" style="display:none"><img src="/static/img/01.png" style="width:240px;height:165px"></div>
+    <div class="a" style="display:none"><img src="/static/img/02.png" style="width:240px;height:165px"></div>
+    <div class="a" style="display:none"><img src="/static/img/03.png" style="width:240px;height:165px"></div>
+    <div class="a" style="display:none"><img src="/static/img/04.png" style="width:240px;height:165px"></div>
+    <div class="a" style="display:none"><img src="/static/img/05.png" style="width:240px;height:165px"></div>
+    <div class="a" style="display:none"><img src="/static/img/06.png" style="width:240px;height:165px"></div>
+</div>
+<script type="text/javascript">
+<!--
+function G(e){return document.getElementById(e);}
+function myPlayer(con, child, speed){
+    var ts = G(con).getElementsByTagName(child),//获取容器内需要轮流显示的子元素：这里是 div
+        timer,k=0;
+        var timer = setInterval(function(){//定义时间控制器
+            for(var m=0;m<ts.length;m++){ts[m].style.display="none";}//先隐藏全部，此处效率降低，可以考虑不用循环
+            ts[k].style.display="";//显示需要显示的
+            if(k>ts.length-2){
+               k=0;
+            }else{
+               k++;
+            }
+        },speed);
+}
+myPlayer("con","div",2000);//调用，参数一外层元素ID，参数二循环元素名称，间隔时间：秒数的1000倍
+-->
+</script>
+<audio src = "/static/music.wav" autoplay="true" loop="true" volume="4"></audio>
+</div>
+<div class= "col-md-6" style="margin:5px 0px 0px 0px;padding: 0px;">
+<div class="panel panel-info ">
+   <div class="panel-heading">
+      <h3 class="panel-title">聊天板</h3>
+   </div>
+
+<table class="table">
+<th>あなたのことが好きです</th>
+{%  for item in items %}
+<tr><td>{{ item.text }}</td></tr>
+{% endfor %}
+</table>
+<form method="POST" action="/list/">
+<input type="text" name = "item_text" class="form-control" placeholder="Text input">
+<input class="btn btn-default" type="submit" value="发送">{% csrf_token %}</form>
+</div></div></div>
+
+<div class="row">
+<div class = "col-md-4">
+<img src="/static/img/bj.jpg" style="position:absolute;top:10px;left:10px;opacity:0.20"/>
+<table id = "zhuti" width="220"  style="position:absolute;top:10px;left:10px;border:1px solid #a9a9a9">
+    <tr height="20"><td  width="220" style=" margin:0px;"> 
+    <table id="LHeader" height="20" width="220">
+    
+</table></td></tr>
+<tr><td height="20" width="220"><table id="LDay" bgcolor="#e7f1fd"> <tbody><tr>
+<td><strong>日</strong></td><td><strong>一</strong></td><td><strong>二</strong></td><td><strong>三</strong></td><td><strong>四</strong></td><td><strong>五</strong></td><td><strong>六</strong></td>
+</tr></tbody></table> </td></tr>
+<tr><td height="120" width="220" id="Container" ></td></tr>
+</table>
+<script type="text/javascript">
+function rili() {
+var today = new Date();
+var year = today.getFullYear();      //本年
+var month = today.getMonth() + 1;    //本月
+var day = today.getDate();           //本日
+//本月第一天是星期几（距星期日离开的天数）
+ var startDay = new Date(year, month - 1, 1).getDay();
+//本月有多少天(即最后一天的getDate()，但是最后一天不知道，我们可以用“上个月的0来表示本月的最后一天”)
+ var nDays = new Date(year, month, 0).getDate();
+//开始画日历
+var numRow = 0;  //记录行的个数，到达7的时候创建tr
+var i;        //日期
+var html = '';
+var html1 = '';
+html1+= '<tbody><tr align="center"><td align="center" width="20"><strong>&lt;</strong></td><td align="center">'
+html1 += year
+html1 += '.'
+html1 += month
+html1 += '</td><td align="center" width="21"><strong>&gt;</strong></td></tr></tbody>'
+html += '<table id="Body" width="220"><tbody>';
+//第一行
+html += '<tr>';
+for (i = 0; i < startDay; i++) {
+html += '<td></td>';
+numRow++;
+}
+for (var j = 1; j <= nDays; j++) {
+//如果是今天则显示红色
+if (j == day) {
+html += '<td style="color:red" onclick="' + "alert('今天是" + j + "号');" + '">';
+html += j;    //开始加日期
+ }
+else {
+html += '<td onclick="' + "alert('你点的是" + j + "号');" + '">';
+html += j;    //开始加日期
+}
+html += '</td>';
+numRow++;
+if (numRow == 7) {  //如果已经到一行（一周）了，重新创建tr
+numRow = 0;
+ html += '</tr><tr>';
+}
+}
+ html += '</tbody></table>';
+document.getElementById("Container").innerHTML = html;
+document.getElementById("LHeader").innerHTML = html1;
+}
+</script>
+</div>
+<div class = "col-md-8" >
+<ul id = "li" >
+<li onclick="shen()">生活</li>
+<li onclick="xin()">新闻</li>
+<li onclick="yu()">娱乐</li>
+</ul>
+<ul  id = "cs" style="display:block" >
+<li><a href= "https://www.baidu.com" style="font-size:15px" >百度</a></li>
+<li><a href= "https://www.baidu.com" style="font-size:15px" >淘宝</a></li>
+<li><a href= "https://www.baidu.com" style="font-size:15px" >腾讯</a></li>
+<li><a href= "https://www.baidu.com" style="font-size:15px" >360</a></li>
+<li><a href= "http://www.oschina.net" style="font-size:15px" >开源中国</a></li></ul>
+
+<ul id = "js" style="display:none" >
+<li><a href= "https://www.baidu.com" style="font-size:15px" >袁弘张馨予结婚</a></li
+><li><a href= "https://www.baidu.com" style="font-size:15px" >林心如霍建华交往</a></li>
+<li><a href= "https://www.baidu.com" style="font-size:15px" >见鬼十法</a></li>
+<li><a href= "https://www.baidu.com" style="font-size:15px" >大学生创业</a></li>
+<li><a href= "http://www.oschina.net" style="font-size:15px" >湖北工业大学</a></li></ul>
+
+<ul id = "gs" style="display:none" >
+<li><a href= "https://www.baidu.com" style="font-size:15px" >火影VS死神</a></li>
+<li><a href= "https://www.baidu.com" style="font-size:15px" >4399</a></li>
+<li id = "lpl" ><a href="http://www.douyu.com/cms/zt/lpl" style="font-size:10px;position:absolute;top:59px;left:5px;z-index:9;color:#FFFFF0;width:130px;height:10px;">英雄联盟职业联赛></a>
+<img src="/static/img/lpl.png" style="position:absolute;top:0px;left:0px;z-index:5;"/><img src="/static/img/black.png" style="position:absolute;top:58px;left:0px;z-index:7;opacity:0.75;"/></li> 
+<li id = "dota"><a href="http://www.douyu.com/67554"  style="font-size:10px;position:absolute;top:61px;left:5px;z-index:9;color:#FFFFF0">DOTA联赛直播地址></a>
+<img src="/static/img/dota.png" style="position:absolute;top:0px;left:0px;z-index:5"/></li>
+<li><a href= "http://www.douyu.com/" style="font-size:15px" >斗鱼直播</a></li>
+<li><a href= "https://www.baidu.com" style="font-size:15px" >起点小说网</a></li>
+<li><a href= "http://www.oschina.net" style="font-size:15px" >妹子网</a></li></ul>
+<script type="text/javascript">
+    function shen(){
+        document.getElementById("cs").style.display = "block";
+        document.getElementById("js").style.display = "none";
+        document.getElementById("gs").style.display = "none";
+    }
+    function xin(){
+        document.getElementById("cs").style.display = "none";
+        document.getElementById("js").style.display = "block";
+        document.getElementById("gs").style.display = "none";
+    }
+    function yu(){
+        document.getElementById("cs").style.display = "none";
+        document.getElementById("js").style.display = "none";
+        document.getElementById("gs").style.display = "block";
+    }
+    var k = 1;
+    setInterval(function(){
+        k += 1;
+        if(k % 3 === 1){shen();}
+        else if(k % 3 === 2){xin();}
+        else{yu();}
+    },10000)
+</script>
+</div>
+</div>
+<div class = "row">
+<div class = "col-md-4" >
+<img id = "huaduo"  style ="position:absolute;top:0px;left:0px;display:"" ;" src="/static/img/jj.gif" />
+<script language="javascript" type="text/javascript">
+var img=document.getElementById("huaduo");
+var x=0,y=0;
+var xSpeed=1,ySpeed=0;
+var w=650;
+function floatdiv(){
+if(x>w||x<0) {xSpeed=0;
+document.getElementById("huaduo").style.display = "none";}
+x+=xSpeed;
+y+=ySpeed;
+img.style.top=y+"px";
+img.style.left=x+"px";
+setTimeout("floatdiv()",10);
+}
+floatdiv();
+</script>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="col-md-2 " style="border:2px solid #C0C0C0"  >
+<h5><strong>python：</strong></h5>
+<a class="btn btn-link" href="gd/1" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>pygame贪吃蛇</strong></h5></a>
+<a class="btn btn-link" href="gd/2" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>pygame扫雷</strong></h5></a>
+<a class="btn btn-link" href="gd/3" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>pygame俄罗斯方块</strong></h5></a>
+<a class="btn btn-link" href="gd/4" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>问卷调查脚本</strong></h5></a>
+<a class="btn btn-link" href="gd/5" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>评教脚本</strong></h5></a>
+<a class="btn btn-link" href="gd/6" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>爬妹子网照片</strong></h5></a>
+<a class="btn btn-link" href="gd/7" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>简单的个人网站</strong></h5></a>
+<a class="btn btn-link" href="gd/8" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>微信公众号</strong></h5></a>
+<a class="btn btn-link" href="gd/9" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>QQ机器人</strong></h5></a>
+<a class="btn btn-link" href="gd/10" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>贴吧删帖器</strong></h5></a>
+<a class="btn btn-link" href="gd/11" role="button" style="margin:10px,0px;padding-top:10px;padding-left:0px;"><h5><strong>照片处理器</strong></h5></a></div></div>
+
+</body>
+</html>

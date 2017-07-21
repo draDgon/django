@@ -1,0 +1,72 @@
+﻿
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+     
+     
+       
+<title>网络相册 - {{ object.name }}</title>
+ 
+<meta name = "viewport" content = "width=device - width,initial-scale = 1.0">
+     <link href = "/static/bootstrap/css/bootstrap.min.css" rel = "stylesheet" media ="screen">           
+<style type="text/css">
+            
+body 
+{ margin: 30px; font-family: Microsoft Yahei,sans-serif; background: #fff; }
+            
+h1 { background: #6E94A3; padding: 20px; color:#fefefe; }
+            
+h2 { background: #ddf; padding: 10px 20px; }
+            
+h3 { background: #D7E8F0; padding: 5px 20px; }
+            
+p { padding: 5px 20px; }
+            
+table { width: 100%; }
+            
+table th { text-align: left; }
+        
+</style>
+    
+</head>
+    
+<body>
+        
+<h1>网络相册</h1>
+        
+
+
+
+<p><a href="{% url 'item_list' %}">&laquo; 返回相册列表</a></p>
+
+<h2>{{ object.name }}</h2>
+<p>{{ object.description }}</p>
+
+<h3>Photos</h3>
+<table>
+    <tr>
+        <th>标题</th>
+        <th>缩略图</th>
+        <th>说明</th>
+    </tr>
+    {% for photo in object.photo_set.all %}
+    <tr>
+        <td><i>{{ photo.title }}</i></td>
+        <td>
+            <a href="{{ photo.get_absolute_url }}">
+                <img src="{{ photo.image.thumb_url }}" />
+            </a>
+        </td>
+        <td>{{ photo.caption }}</td>
+    </tr>
+    {% endfor %}
+</table>
+   
+</body>
+
+</html>
+
+

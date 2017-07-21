@@ -1,0 +1,77 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+ 
+<meta name = "viewport" content = "width=device - width,initial-scale = 1.0">
+<link href = "/static/bootstrap/css/bootstrap.min.css" rel = "stylesheet" media ="screen"> 
+<title>网络相册</title>
+           
+<style>
+            
+h1 { background: FFFACD; padding: 20px; color:#FFDAB9; }
+            
+h2 { background: #FF1493; padding: 10px 20px; }
+            
+h3 { background: #D7E8F0; padding: 5px 20px; }
+            
+p { padding: 5px 20px; }
+            
+table { width: 100%; }
+            
+table th { text-align: left; }
+        
+</style>
+    
+</head>
+    
+<body>
+
+
+  <div class="row" style="background-color:#BC8F8F"> 
+
+
+        <div class="col-md-2 col-md-offset-10 ">
+  
+<a class="btn btn-link" href="http://127.0.0.1:8000/list/" role="button"><span class = "glyphicon glyphicon-home" style="font-size: 20px"></span></a>
+<a class="btn btn-link" href="http://127.0.0.1:8000/list/xx/" role="button"><span class = "glyphicon glyphicon-user" style="font-size: 20px"></span></a>
+<a class="btn btn-link" href="http://127.0.0.1:8000/list/gy/" role="button"><span class = "glyphicon glyphicon-refresh" style="font-size: 20px"></span></a></div></div>
+
+ 
+<h1>这里才不是相册</h1>
+<p>想看什么自己点</p>
+
+<h3>有毒有毒</h3>
+<div class = "container">
+<div class = "row">
+<div class = "col-md-8 col-md-offset-2">
+<table>
+    <tr>
+    {% for item in object_list %}
+        <td>
+            <a href="{{ item.get_absolute_url }}"><b>{{ item.name }}</b><br />
+            {% if item.photo_set.count %}
+            <img src="{{ item.photo_set.all.0.image.thumb_url }}" />
+                
+            {% else %}
+                <span>No photos (yet)</span>
+            {% endif %}
+            </a>
+        </td>
+    {% endfor %}
+    </tr>
+</table>
+</div>
+</div>
+</div>
+<div class = "row">
+<div class = "col-md-2 col-md-offset-10">
+<p><h4><a href="{% url 'item_list'  %}">查看相册列表 &raquo;</a></h4></p>
+</div>
+</div>
+
+</body>
+
+</html>
+

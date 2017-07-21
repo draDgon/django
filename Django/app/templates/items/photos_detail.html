@@ -1,0 +1,54 @@
+﻿
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+     
+     
+       
+<title>网络相册 - {{ object.item.name }} - {{ object.title }}</title>
+ 
+<meta name = "viewport" content = "width=device - width,initial-scale = 1.0">
+     <link href = "/static/bootstrap/css/bootstrap.min.css" rel = "stylesheet" media ="screen">           
+<style type="text/css">
+            
+body 
+{ margin: 30px; font-family: Microsoft Yahei,sans-serif; background: #fff; }
+            
+h1 { background: #6E94A3; padding: 20px; color:#fefefe; }
+            
+h2 { background: #ddf; padding: 10px 20px; }
+            
+h3 { background: #D7E8F0; padding: 5px 20px; }
+            
+p { padding: 5px 20px; }
+            
+table { width: 100%; }
+            
+table th { text-align: left; }
+        
+</style>
+    
+</head>
+    
+<body>
+        
+<h1>网络相册</h1>
+        
+
+
+
+
+<a href="{{ object.item.get_absolute_url }}">&laquo; 返回到 {{ object.item.name }} 内容页</a>
+
+<h2>{{ object.item.name }} - {{ object.title }}</h2>
+<img src="{{ object.image.url}}" />
+{% if object.caption %}<p>{{ object.caption }}</p>{% endif %}
+    
+</body>
+
+</html>
+
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name = "viewport" content = "width=device - width,initial-scale = 1.0">
+     <link href = "/static/bootstrap/css/bootstrap.min.css" rel = "stylesheet" media ="screen"> 
+    <title>My Blogs</title>
+<style type="text/css">
+
+.blog .summary {
+            padding-top: 20px;}
+form input{margin: 5px 0px ;padding-right: 0px;padding-left: 0px;border: 0px ;}
+form button{margin: 5px 0px;padding-left: 0px;padding-right: 0px;border: 0px ;}
+#from_top{
+    display: block;
+    bottom: 5px;
+    left: 25px;
+    position: fixed;
+    color: #ECD672;
+}
+.top_img{
+    background-image: url("/static/img/topicon.png");
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.top_img:hover{
+    background-image: url("/static/img/topiconblack.png");
+}
+
+</style>
+   
+</head>
+<body>
+
+
+<div class="row" id = "zzz" style="background-color:#7FFFD4;position:fixed;left:0px;top:0px;right:0px;z-index:9"> 
+<div class = "col-md-6 col-md-offset-1">  
+<form id = "search-form" action="{% url 'blog' %}" method="POST">
+<input type="text"  name="q" style = "width:150px;height:30px" />
+<button type="submit" style = "width:50px;height:30px">搜索</button>
+{% csrf_token %}
+ </form>
+</div>
+
+<div class="col-md-3 col-md-offset-2">
+<a class="btn btn-link" href="http://127.0.0.1:8000/list/" role="button"><span class = "glyphicon glyphicon-home" style="font-size: 20px"></span></a>
+<a class="btn btn-link" href="http://127.0.0.1:8000/list/xx/" role="button"><span class = "glyphicon glyphicon-user" style="font-size: 20px">
+</span></a>
+<a class="btn btn-link" href="http://127.0.0.1:8000/list/gy/" role="button"><span class = "glyphicon glyphicon-refresh" style="font-size: 20px"></span></a></div></div>
+
+
+
+
+<div class = "container"> 
+<div class = "row" style="margin:25px 0px 0px 0px">
+<div class = "col-md-8">
+{% for blog in blogs %}
+
+
+    <div class="blog">
+        <div class="title">
+            <a href="{% url 'detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+        </div>
+        <div class="info">
+            <span class="author" style="color: #808080">作者：{{ blog.author }}</span>
+           <span class="created" style="color: #808080">创建时间：{{ blog.created|date:"Y-m-d H:i" }}</span>
+        </div>
+        <div class="summary">
+            {{ blog.content|slice:"250"}}......
+        </div>
+<h5><a href = "{% url 'detail' blog.id %}">阅读全文>></a></h5>
+<div class = "row">
+<div class = "col-xs-4">
+<span class = "glyphicon glyphicon-tag" style="font-size: 15px"></span>{{blog.tags}}</div>
+<div class = "col-xs-4 col-xs-offset-4">
+<span class = "glyphicon glyphicon-comment" style="font-size: 15px"></span>&nbsp;&nbsp;{{blog.commen}}
+<span class = "glyphicon glyphicon-thumbs-up" style="font-size: 15px"></span>&nbsp;&nbsp;{{blog.dianzan}}&nbsp;&nbsp;
+<span class = "glyphicon glyphicon-thumbs-down" style="font-size: 15px"></span>&nbsp;&nbsp;{{blog.chapin}}&nbsp;&nbsp;
+<span class = "glyphicon glyphicon-eye-open" style="font-size: 15px"></span>&nbsp;&nbsp;{{blog.look}}
+ </div></div>
+ 
+<div>-----------------------------------------------------------------------------------------------------------------------------------------------------</div>
+    
+</div>
+
+
+{% endfor %}
+<div class="pagination">
+    <span class="step-links">
+        {% if blogs.has_previous %}
+            <a href="?page={{ blogs.previous_page_number }}">previous</a>
+        {% endif %}
+ 
+        <span class="current">
+            Page {{ blogs.number }} of {{ blogs.paginator.num_pages }}.
+        </span>
+ 
+        {% if blogs.has_next %}
+            <a href="?page={{ blogs.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+<div class = "col-md-4" style = "padding-top: 20px">
+<div class = "panel panel-success" >
+<div class = "panel-heading">
+<h3 class = "panel-title">分类</h3>
+</div>
+<div class = "panel-body">
+<li><h5 style = "color:#BA55D3">Python(2)</h5></li>
+<li><h5 style = "color:#FFB6C1">Pygame(1)</h5></li>
+<li><h5 style = "color:#FFE4E1">Django(0)</h5></li>
+<li><h5 style = "color:#4B0082">PHP(0)</h5></li>
+<li><h5 style = "color:#FFA07A">Javascript(1)</h5></li>
+<li><h5 style = "color:#F4A460">JAVA(0)</h5></li>
+<li><h5 style = "color:#D2691E">C(0)</h5></li>
+
+</div>
+</div>
+<div class = "panel panel-info">
+<div class = "panel-heading">
+<h3 class = "panel-title">标签</h3>
+</div>
+<div class = "panel-body">
+<h5 style = "color:#20B2AA">Python</h5>
+<h5 style = "color:#FFFF00">Pygame</h5>
+<h5 style = "color:#FFFFE0">Django</h5>
+<h5 style = "color:#556B2F">PHP</h5>
+<h5 style = "color:#66CDAA">Javascript</h5>
+<h5 style = "color:#F0F0F0">JAVA</h5>
+<h5 style = "color:#3CB371">C</h5>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    function from_top(){
+        document.write('<dic id="from_top"><a href ="#"  title="回到顶部"><div class = "top_img"></div></a></div>')
+    }
+    from_top();
+</script>
+</div>
+
+</body>
+</html>
